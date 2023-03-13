@@ -1,0 +1,28 @@
+group: {
+	getp: function(canvas, clock) {},
+	render: function(p) {},
+}
+
+canvas: 
+
+rectangle = function(p={width:0, }) {
+	
+}
+
+
+
+colorpalette
+soundpalette
+streams
+
+listeners
+element ::: { {getElementParameters: function(parentParameters) {return {elementParameters, childParameters} }, childElements: [], render: function(){ call or not childElement render methods } }] 
+
+parentParameters includes the event info as well as the larger canvas info
+
+
+blueprint: {
+	
+	colorPalettes: [ [],[] ...    ],
+	soundPalettes: [ [], [],  .... ],
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>chance ::: sketches</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="description" content="kathy mctavish: media composer ::: chance sketches" />
+	<meta name="author" content="kathy mctavish">
+	<!-- from ::: http://www.favicon-generator.org/ -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/public/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/public/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/public/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/public/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/public/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/public/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/public/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/public/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/public/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+	<link rel="manifest" href="/public/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/public/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- JSON-LD : Google -->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"name": "chance ::: sketches ::: set parameters",
+			"breadcrumb": "mctavish.io > chance sketches > input parameters",
+          			"url": "http://www.mctavish.io/chanceinput.html",
+			"description": "2017 for the Tweed Art Museum Sax Gallery",
+			"datePublished": "2017-03-01",
+          			"image": "http://www.mctavish.io/data/mctavishIcon-01-04-01-01-01.png",
+			"author": "http://mctavish.io",
+			"license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+		}
+	</script>
+	<script type="text/javascript">
+		blueprint = <%-JSON.stringify(blueprint)%>;
+	</script>
+	<script src="/public/javascript/velocity.min.js"></script>
+	<script src="/public/javascript/kefir.min.js"></script>
+	<link rel="stylesheet" href="/public/css/chance.css"/>
+	<style>
+		
+		body {
+			padding: 2em;
+			color: #ffffeb;
+		}
+		h1 {
+			color: #ffff00;
+		}
+		h5 {
+			color: #9a0000;
+		}
+
+	</style>
+</head>
+<body id="body" style="background:#000000">
+	<header>
+		<h1>chance sketches</h1>
+		<h2>input parameters</h2>
+	</header>
+	<form id="inputform" action="<%- blueprint.fullurl %>/chance/" method="post">
+		<h5>phase</h5>
+		<div class="inputgroup">
+			<select name="phase">
+				<option value="motion" selected="true">motion</option>
+				<option value="stills">stills</option>
+				<option value="book">book</option>
+				<option value="pdfbook">pdfbook</option>
+			</select>
+		</div>
+		<h5>purpose</h5>
+		<div class="inputgroup">
+			<select name="purpose">
+				<option value="default" selected="true">motion</option>
+				<option value="book">book</option>
+				<option value="poster">poster</option>
+				<option value="postcard">postcard</option>
+				<option value="logo">logo</option>
+				<option value="plain">plain</option>
+			</select>
+		</div>
+		<h5>sketch set</h5>
+		<div class="inputgroup">
+			<select name="sketchset">
+				<option value="core" selected="true">chance core set</option>
+				<option value="lines">lines / transport</option>
+				<option value="circles">circles</option>
+			</select>
+		</div>
+		<h5>sketch</h5>
+		<div class="inputgroup">
+			<select name="sketch">
+				<option value="all">all sketches</option>
+				<% for(var j = 0; j < blueprint.numsketches; ++j) {%>
+					<option value="<%-j%>">sketch <%-j%></option>
+				<% } %>
+			</select>
+		</div>
+		<h5>quartet</h5>
+		<div class="inputgroup">
+			<select name="quartet">
+				<% for(var j = 0; j < 8; ++j) {%>
+					<option value="<%-j%>">quartet <%-j%></option>
+				<% } %>
+			</select>
+		</div>
+		<h5>number (quartet part)</h5>
+		<div class="inputgroup">
+			<select name="number">
+				<% for(var j = 0; j < 4; ++j) {%>
+					<option value="<%-j%>">number <%-j%></option>
+				<% } %>
+			</select>
+		</div>
+		<h5>dt</h5>
+		<div class="inputgroup">
+			<select name="dt">
+				<option value="2" selected="true">default</option>
+				<option value="1">faster</option>
+				<option value="3">slower</option>
+				<option value="4">slowest</option>
+			</select>
+		</div>
+		
+		<h5>role</h5>
+		<div class="inputgroup">
+			<select name="role">
+				<option value="desktop" selected="true">desktop</option>
+				<option value="projection">projection</option>
+				<option value="mobile">mobile</option>
+			</select>
+		</div>
+		<h5>clipping</h5>
+		<div class="inputgroup">
+			<select name="clipping">
+				<option value="all" >all</option>
+				<option value="box" selected="true">box</option>
+				<option value="bars">bars</option>
+				<option value="circle">circle</option>
+				<option value="text">text</option>
+			</select>
+		</div>	
+		<h5>rootcolors</h5>
+		<div class="inputgroup">
+			<select name="rootcolors" multiple="true">
+				<option value="9a0000" selected="true">red</option>
+				<option value="ffcc00" selected="true">yellow</option>
+				<option value="000000" selected="true">black</option>
+				<option value="fcfbe3" selected="true">white</option>
+				<option value="006699">blue</option>
+				<option value="009966">green</option>
+				<option value="484848">gray</option>
+				<option value="bw">black and white</option>
+				<option value="lights">light spectrum</option>
+				<option value="darks">dark spectrum</option>
+				<option value="blues">blue spectrum</option>
+				<option value="yellows">yellow spectrum</option>
+			</select>
+		</div>
+		<h5>size</h5>
+		<i>or ::: leave at zero to have the window size itself</i>
+		<div class="inputgroup">
+			<div>
+				<input id="width" type="number" name="width" value="0" min="0" max="8000" step="1" size="40">
+				<label for="width">width (pixels or pdf units)</label>
+			</div>
+		</div>
+		<div class="inputgroup">
+			<div>
+				<input id="height" type="number" name="height" value="0" min="0" max="8000" step="1">
+				<label for="height">height (pixels or pdf units)</label>
+			</div>
+		</div>
+		<h5>root frequency</h5>
+		<i>powers of 2 ::: c === 256</i>
+		<div class="inputgroup">
+			<div>
+				<input id="rootpitch" type="number" name="rootpitch" value="256" min="128" max="384" step="16">
+				<label for="rootpitch">choose</label>
+			</div>
+		</div>
+		<h5>number of drawings</h5>
+		<div class="inputgroup">
+			<div>
+				<input id="ndrawings" type="number" name="ndrawings" value="4" min="1" max="5" step="1">
+				<label for="ndrawings">choose</label>
+			</div>
+		</div>
+		<h5>sound level</h5>
+		<div class="inputgroup">
+			<select name="gain" multiple="true">
+				<option value="0.0" >off</option>
+				<option value="0.1" >low</option>
+				<option value="0.3" selected="true">medium</option>
+				<option value="0.6" >high</option>
+			</select>
+		</div>
+		<h5>number of frames</h5>
+		<div class="inputgroup">
+			<div>
+				<input id="nframes" type="number" name="nframes" value="1" min="1" max="5" step="1">
+				<label for="nframes">choose</label>
+			</div>
+		</div>
+		<input type="submit" value="submit">
+	</form>	
+</body>
+
+</html>
